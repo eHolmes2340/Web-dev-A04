@@ -1,0 +1,68 @@
+<!--
+Project    : hiloStart.html
+FILE       : A04
+Programmer : Erik Holmes
+Date       : October 18, 2022
+Description: This file contains all the client side code for the start of the hi-low game. 
+
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <Title>Hi-Low Game</Title>
+        <link href="styles/hiloStart.css" rel="stylesheet">
+
+        <script type="text/javascript">
+            var nameEntered; 
+            var nameToBeSentToServer; 
+
+            //Function      : submitForm
+            //Parameters    : void
+            //Returns       : true or false
+            //Description   : This function will submit the form if all information that the user enters in valid.
+            function submitForm()
+            {
+                nameEntered=document.getElementById("nameEntered").value; 
+
+                if(!checkName(nameEntered)==true)
+                {
+                    document.getElementById("nameErrorMsg").style.display="block"; 
+                    document.getElementById('nameErrorMsg').innerHTML="Error this text box can not be blank"; 
+                    return false; 
+                }
+                else 
+                {
+                     
+                    document.getElementById("nameToSentToServer").value=nameEntered; 
+                    return true; 
+                }
+            }
+            //Function      : checkName
+            //Parameters    : name
+            //Returns       : return true or false
+            //Description   : This function will validate the users name. The name can not be blank.
+            function checkName(name)
+            {
+                if(name==null||name=="") return false; 
+                else return true; 
+            }
+        </script>
+    </head>
+    <body>
+        <h1> Hi-Low Game </h1>
+        <hr>
+        <br>
+        <form>
+            <div id="enterNameDiv">
+                <p>Please enter your first and last name.</p> 
+                <p id="nameErrorMsg"></p>
+                <label for="name">Name:</label>
+                <input type="text" name="name" id="nameEntered">
+                <input type="hidden" id="nameSentToServer" name="nameBeingSent">
+                <input type="button" value="Submit Name" onclick="submitForm()">
+
+            </div>
+        </form>
+    </body>
+</html>
