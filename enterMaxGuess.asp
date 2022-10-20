@@ -16,12 +16,13 @@
         </script>
     </head>
     <body>
+        <h1 id="gameTitle">Hi-Low</h1>
         <%
             dim fname
 
 
-            fname=Request.Form("nameEntered")
-            Response.Write("<p>fname </p>")
+            fname=Request.Form("name")
+            Response.Write(fname)
         %>
 
     </body>

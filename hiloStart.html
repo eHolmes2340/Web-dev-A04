@@ -15,7 +15,7 @@ Description: This file contains all the client side code for the start of the hi
 
         <script type="text/javascript">
             var nameEntered; 
-            var nameToBeSentToServer; 
+     
 
             //Function      : submitForm
             //Parameters    : void
@@ -32,10 +32,11 @@ Description: This file contains all the client side code for the start of the hi
                     return false; 
                 }
                 else 
-                {  
-
-                    return true; 
+                {
+                    document.getElementById("nameForm").submit();
+                    return true;  
                 }
+                
             }
             //Function      : checkName
             //Parameters    : name
@@ -52,14 +53,16 @@ Description: This file contains all the client side code for the start of the hi
         <h1> Hi-Low Game </h1>
         <hr>
         <br>
-        <form action="enterMaxGuess.asp" onsubmit="submitForm()" method="get">
+        <form action="enterMaxGuess.asp" method="post" id="nameForm">
             <div id="enterNameDiv">
                 <p>Please enter your first and last name.</p> 
                 <p id="nameErrorMsg"></p>
                 <label for="name">Name:</label>
                 <input type="text" name="name" id="nameEntered">
                 <input type="button" value="Submit Name" onclick="submitForm()">
+        
             </div>
         </form>
+    
     </body>
 </html>
