@@ -11,19 +11,27 @@
         <title>
 
         </title>
-        <link href="styles/" rel="stylesheet">
+        <link href="styles/enterMaxGuess.css" rel="stylesheet">
         <script>
+            
         </script>
     </head>
     <body>
         <h1 id="gameTitle">Hi-Low</h1>
-        <%
-            dim fname
+        <hr>
+        <form action="">
+            <div id="maxGuessRamge">
+                <%
+                dim fname
+                
+                fname=Request.Form("name")
+                Response.Write("<p> Welcome <u>"&fname&"</u>. Please enter your max guess range </p>")
 
+                Sub Hello()
 
-            fname=Request.Form("name")
-            Response.Write(fname)
-        %>
-
+                end Sub
+            %>
+            </div>
+        </form>
     </body>
 </html>
