@@ -14,18 +14,26 @@
         <meta charset="UTF-8">
         <link href="styles/enterMaxGuess.css" rel="stylesheet">
         <script>
-                function checkMaxGuess(){
+
+            var randomNumber; 
+            
+            function checkMaxGuess(){
                     
-                   var maxGuess=document.getElementById("maxGuess").value; 
-                    if(maxGuess==" "||maxGuess==null)
-                    {
-                        document.getElementById("error").innerHTML="This text box can not be blank"; 
-                    }
-                    else 
-                    {
-                        document.getElementById("maxRangeForm").submit(); 
-                    }
-                }
+              var maxGuess=document.getElementById("maxGuess").value; 
+              if(maxGuess==" "||maxGuess==null)
+              {
+                document.getElementById("error").innerHTML="This text box can not be blank"; 
+              }
+              else 
+              {
+                randomNumber=Math.floor(Math.random()*maxGuess)+1; 
+
+                document.getElementById("maxNumberBeingSent").value; 
+                document.getElementById("randomNumber").value; 
+                
+                
+              }
+            }
                     
         </script>
     </head>
@@ -50,11 +58,12 @@
             <input name="num"  type="number" min="1" step="1"
             onkeypress="return event.charCode >= 48 && event.charCode <= 57"
             title="Numbers only"
-            id="maxGuessRange">
+            id="maxGuess">
 
             <input type="button" id="submitMaxGuess" value="Submit" onclick="checkMaxGuess()">
-            <input type="hidden" name="nameBeingSent" name="name" id="nameBeingSentToNextPage">
-            <input type="hidden" name="maxGuessNum" name="maxGuessRange"id='maxNumberBeingSent'> 
+            <input type="hidden" value="<%=fname%>"/>
+            <input type="hidden" name="maxGuessNum" id='maxNumberBeingSent'/> 
+            <input type="hidden" name="randomNumber" id="randomNumber"/>
             </div>
         </form>
     </body>
