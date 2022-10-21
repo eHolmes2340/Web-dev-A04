@@ -11,8 +11,20 @@
         <title>
             enterMaxGuess
         </title>
+        <style>
+            body{
+                 text-align: center;
+                 background-color: lightgray;
+             }
+            h1{
+                color: orange;
+            }
+            #error{
+                color:red;
+            }
+        </style>
         <meta charset="UTF-8">
-        <link href="styles/enterMaxGuess.css" rel="stylesheet">
+       
         <script>
 
             var randomNumber; 
@@ -31,7 +43,7 @@
                 document.getElementById("maxNumberBeingSent").value; 
                 document.getElementById("randomNumber").value; 
                 
-                
+                document.getElementById("maxRangeForm").submit(); 
               }
             }
                     
@@ -40,7 +52,7 @@
     <body>
         <h1 id="gameTitle">Hi-Low</h1>
         <hr>
-        <form action="" method="post" id="maxRangeForm">
+        <form action="guess.asp" method="post" id="maxRangeForm">
             <div id="maxGuessRamge">
             <%
                 dim fname
