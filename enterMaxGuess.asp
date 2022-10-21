@@ -32,16 +32,17 @@
             function checkMaxGuess(){
                     
               var maxGuess=document.getElementById("maxGuess").value; 
-              if(maxGuess==" "||maxGuess==null)
+              if(maxGuess===""||maxGuess===null)
               {
                 document.getElementById("error").innerHTML="This text box can not be blank"; 
+                return false;
               }
               else 
               {
                 randomNumber=Math.floor(Math.random()*maxGuess)+1; 
 
-                document.getElementById("maxNumberBeingSent").value; 
-                document.getElementById("randomNumber").value; 
+                document.getElementById("maxNumberBeingSent").value=maxGuess 
+                document.getElementById("randomNumber").value=randomNumber; 
                 
                 document.getElementById("maxRangeForm").submit(); 
               }
@@ -73,9 +74,9 @@
             id="maxGuess">
 
             <input type="button" id="submitMaxGuess" value="Submit" onclick="checkMaxGuess()">
-            <input type="hidden" value="<%=fname%>"/>
-            <input type="hidden" name="maxGuessNum" id='maxNumberBeingSent'/> 
-            <input type="hidden" name="randomNumber" id="randomNumber"/>
+            <input type="hidden" name="fname" value="<%=fname%>"">
+            <input type="hidden" name="maxGuessNum" id='maxNumberBeingSent'> 
+            <input type="hidden" name="randomNumber" id="randomNumber">
             </div>
         </form>
     </body>
