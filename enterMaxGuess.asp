@@ -1,7 +1,7 @@
 <!--
     Project    : A04
     File       : enterMaxGuess.asp
-    Programmer : Erik Holmes
+    Programmer : Erik Holmes, Richie Joseph
     Date       : October 20,2022
     Description: This file will contain all the server side code for the user to enter the max guess range
 -->
@@ -29,6 +29,10 @@
 
             var randomNumber; 
             
+            //Function   : checkMaxGuess()
+            //Parameter  : void
+            //Return     : boolean
+            //Description: This function will check to make sure the user enters a valid input
             function checkMaxGuess(){
                     
               var maxGuess=document.getElementById("maxGuess").value; 
